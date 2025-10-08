@@ -4,7 +4,7 @@ Current project aimed at understanding tunneling as a phenomenon based on a hitt
 
 Tunneling metric is quantified by creating a lattice between subsequent pitch types, measuring points across 200 timestamps across the trajectory of each pitch type (measured using
 9-pitch parameters from baseball savant data. The bounds for this are between pitch release and hitter reaction point (150 ms before pitch crosses home plate).
-![Tunneling Metric Graphic](images/Tunneling Metric Graphic.png)
+![Tunneling Metric Graphic](images/TunnelingMetricGraphic.png)
 
 To test this metric, I created a "swing decision model" which attempts to isolate a hitter's swing decisions away from how effective a pitch is on its own.
 The swing decision metric takes into account pitch speeds, movements, approach angles, release points, hitter and pitcher handedness, count, among a multitude of other factors.
@@ -12,7 +12,7 @@ These factors are used in multiple binary classification lightgbm models to pred
 to run values, and then compared to the actual outcome of the pitch. This model predicted the correct event ~64% of the time. After, real outcome and predicted outcome are compared, the
 difference between the two is meant to represent the discrepancy between a hitter's swing decisions and the effectiveness of the individual pitch, hoping to quantify the effects of factors
 outside of how effective the individual pitch was.
-![Swing Decision Metric Graphic](images/Swing Decisions Graphic.png)
+![Swing Decision Metric Graphic](images/SwingDecisionsGraphic.png)
 
 After this process, I had noticed that the 2.5 million pitch dataset (all pitches 2022-2024 on statcast), and needed to narrow down to pitches with the intention of tunneling. Additionally, in an attempt to account for the difference in the hitters ability to perceive pitches in the x, y, and z directions, I created a model which found the optimal x, y, and z weights for maximizing the r^2 value between my swing decision metric and my tunneling metric. It was revealed that the weights were about x = 1.2, y = 0.4, and z = 1.4. All of this code can be found in tunneling_model.R.
 
