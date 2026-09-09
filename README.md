@@ -90,7 +90,7 @@ the two pitches subtend at the hitter's eye.**
 
 Tested at the pitch level on ~96k primary-fastball → secondary pairs, 2026,
 with pitcher fixed effects and pitcher-clustered standard errors
-([[`angular_tunnel_validation.R`](https://github.com/dcawthon2242/parachute-changeup/blob/main/baseball/angular_tunnel_validation.R)](https://github.com/dcawthon2242/parachute-changeup/blob/main/baseball/angular_tunnel_validation.R)):
+([`angular_tunnel_validation.R`](https://github.com/dcawthon2242/parachute-changeup/blob/main/baseball/angular_tunnel_validation.R)):
 
 | Outcome | Angular (eye-level) metric | Original weighted-distance metric |
 |---|---|---|
